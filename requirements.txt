@@ -9,3 +9,4 @@ groq
 pdfplumber
 PyMuPDF
 fastapi
+PyPDF2
