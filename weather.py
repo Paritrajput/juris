@@ -5,15 +5,27 @@ import numpy as np
 from PyPDF2 import PdfReader
 from sentence_transformers import SentenceTransformer
 from groq import Groq
+import gdown
 
 # === CONFIG ===
 FAISS_INDEX_PATH = "faiss_legal.index"
 METADATA_PATH = "faiss_legal_metadata.json"
+FAISS_INDEX_GDRIVE_ID = "https://drive.google.com/file/d/19NAfrrd6xsXukhepTunUkGe8oB1rWpJ6/view?usp=drivesdk "
+METADATA_GDRIVE_ID = "https://drive.google.com/file/d/19NAzfK2-CNMLDWFLRspzrcHm-uly4YB-/view?usp=drivesdk "
 EMBED_MODEL = "all-MiniLM-L6-v2"
 GROQ_API_KEY = "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"
 LLAMA_MODEL = "llama3-70b-8192"
 TOP_K = 5
+# === Ensure required files are downloaded ===
+def download_from_drive(file_id, output_path):
+    if not os.path.exists(output_path):
+        print(f"⬇️ Downloading {output_path} from Google Drive...")
+        gdown.download(f"https://drive.google.com/uc?id={file_id}", output_path, quiet=False)
+    else:
+        print(f"✅ {output_path} already exists, skipping download.")
 
+download_from_drive(FAISS_INDEX_GDRIVE_ID, FAISS_INDEX_PATH)
+download_from_drive(METADATA_GDRIVE_ID, METADATA_PATH)
 # === Load FAISS + Metadata ===
 print("🔁 Loading FAISS index and metadata...")
 index = faiss.read_index(FAISS_INDEX_PATH)
