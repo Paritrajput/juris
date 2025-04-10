@@ -10,8 +10,8 @@ import gdown
 # === CONFIG ===
 FAISS_INDEX_PATH = "faiss_legal.index"
 METADATA_PATH = "faiss_legal_metadata.json"
-FAISS_INDEX_GDRIVE_ID = "https://drive.google.com/file/d/19NAfrrd6xsXukhepTunUkGe8oB1rWpJ6/view?usp=drivesdk "
-METADATA_GDRIVE_ID = "https://drive.google.com/file/d/19NAzfK2-CNMLDWFLRspzrcHm-uly4YB-/view?usp=drivesdk "
+FAISS_INDEX_GDRIVE_ID = "19NAfrrd6xsXukhepTunUkGe8oB1rWpJ6"
+METADATA_GDRIVE_ID = "19NAzfK2-CNMLDWFLRspzrcHm-uly4YB "
 EMBED_MODEL = "all-MiniLM-L6-v2"
 GROQ_API_KEY = "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"
 LLAMA_MODEL = "llama3-70b-8192"
