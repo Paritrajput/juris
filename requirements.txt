@@ -10,3 +10,4 @@ pdfplumber
 PyMuPDF
 fastapi
 PyPDF2
+gdown
