@@ -7,7 +7,7 @@ app = FastAPI()
 class UserQuery(BaseModel):
     case_description: str
 
-@app.post("/analyze")
+@app.post("api/analyze")
 def analyze_case(query: UserQuery):
     similar = search_faiss(query.case_description, top_k=5)
     prompt = build_prompt(query.case_description, similar)
