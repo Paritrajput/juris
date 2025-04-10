@@ -8,3 +8,4 @@ selenium
 pyarrow
 fastapi
 uvicorn[standard]
+PyPDF2
